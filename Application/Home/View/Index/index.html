@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>药房管理后台登录</title>
+    <meta charset="utf-8">
+    <link href="__PUBLIC__/css/index.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div class="main">
+    <div class="login">
+        <div class="inset">
+            <!--start-main-->
+            <div>
+                <img src="__PUBLIC__/img/favicon.ico" width="50px" height="45px">
+                <h2>药房管理后台登录</h2>
+            </div>
+            <form action="{:U('index/login')}" method="post" id="form1">
+                <table>
+                    <tr>
+                        <td>
+                            用户名：
+                        </td>
+                        <td>
+                            <input id="login_name" name="login_name" type="text" class="textbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>密码：</td>
+                        <td>
+                            <input id="password" name="password" type="password" class="password">
+                        </td>
+                    </tr>
+                </table>
+                <div  >
+                    <span id="error_msg" class="text-error font-s-14"></span>
+                </div>
+                <div class="sign">
+                    <button id="submit_btn" type="button" onclick="qualify()" class="submit">登录</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--//end-main-->
+</div>
+<script type="text/javascript" src="__PUBLIC__/Common/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
+</body>
+</html>
+
