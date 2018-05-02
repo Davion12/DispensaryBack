@@ -9,6 +9,9 @@ return array(
     'DB_PORT'   => 3306, // 端口
     'DB_PREFIX' => 't_', // 数据库表前缀
 
+    //远程服务器地址
     'HOST_URL' => 'http://10.254.33.107:',
     'HOST_PORT' => '3008',
+
+    'CONTROLLER_PATH' => ''
 );

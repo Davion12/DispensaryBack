@@ -8,8 +8,26 @@ function qualify() {
         showErrorMsg('login_pwd', '密码不能为空！');
         return false;
     }
-
-    $('#form1').submit();
+    var params = {
+        'login_name': $('#login_name').val(),
+        'password':$('#password').val()
+    };
+    $.ajax({
+        url: "index.php/Home/Index/login",
+        type: 'post',
+        dataType: 'json',
+        data: params,
+        success: function(jsonData){
+            if(jsonData["code"] === 0){
+                $('#form1').submit();
+            } else {
+                $('#error_msg').html(jsonData["msg"]);
+            }
+        },
+        error: function(){
+            $('#error_msg').html("请求出错！");
+        }
+    });
 }
 
 

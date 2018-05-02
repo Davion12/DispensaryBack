@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head><title></title>
+    <link rel="stylesheet" href="/stylesheets/alertify.min.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="/stylesheets/datepicker3.css">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/style.min.css">
+    <link rel="stylesheet" href="/stylesheets/select2.min.css">
+    <script src="/javascripts/lumino.glyphs.js"></script>
+    <script src="/ueditor/ueditor.config.js"></script>
+    <script src="/ueditor/ueditor.all.js"></script><!--if lt IE 9script(src='/javascripts/html5shiv.js')
+script(src='/javascripts/respond.min.js')
+--></head>
+<body>
+<nav role="navigation" class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" data-toggle="collapse" data-target="#sidebar-collapse"
+                    class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><span
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            <a class="navbar-brand"><span>朗玛智能导诊系统(IGS)</span></a>
+            <ul class="user-menu">
+                <li class="dropdown pull-right"><a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                    <svg class="glyph stroked male-user">
+                        <use xlink:href="#stroked-male-user"></use>
+                    </svg>
+                    超级管理员<span class="caret"></span></a>
+                    <ul role="menu" class="dropdown-menu">
+                        <li><a href="./users/profile">
+                            <svg class="glyph stroked male-user">
+                                <use xlink:href="#stroked-male-user"></use>
+                            </svg>
+                            个人资料</a></li>
+                        <li><a href="./logout">
+                            <svg class="glyph stroked cancel">
+                                <use xlink:href="#stroked-cancel"></use>
+                            </svg>
+                            退出</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div id="sidebar-collapse" style="width:13%;" class="sidebar">
+    <form role="search">
+        <div class="form-group"></div>
+    </form>
+    <ul class="nav menu">
+        <li class="active"><a href="/admin/index">
+            <svg class="glyph stroked calendar">
+                <use xlink:href="#stroked-calendar"></use>
+            </svg>
+            首页</a></li>
+        <li class="parent"><a href="javascript:;"><span data-toggle="collapse" href="#sub-item-1"><svg
+                class="glyph stroked hevron-down"><use xlink:href="#stroked-chevron-down"></use></svg>管理员管理</span></a>
+            <ul id="sub-item-1" class="children collapse">
+                <li><a href="/admin/users/adminList">
+                    <svg class="glyph stroked chevron-right">
+                        <use xlink:href="#stroked-chevron-right"></use>
+                    </svg>
+                    后台管理员列表</a></li>
+                <li><a href="/admin/users/cAdminList">
+                    <svg class="glyph stroked chevron-right">
+                        <use xlink:href="#stroked-chevron-right"></use>
+                    </svg>
+                    分诊台管理员列表</a></li>
+            </ul>
+        </li>
+        <li><a href="/admin/clinics/list">
+            <svg class="glyph stroked calendar">
+                <use xlink:href="#stroked-calendar"></use>
+            </svg>
+            分诊台管理</a></li>
+        <li><a href="/admin/checks/list">
+            <svg class="glyph stroked calendar">
+                <use xlink:href="#stroked-calendar"></use>
+            </svg>
+            检查项目管理</a></li>
+        <li><a href="/admin/depts/list">
+            <svg class="glyph stroked calendar">
+                <use xlink:href="#stroked-calendar"></use>
+            </svg>
+            科室管理</a></li>
+        <li><a href="/admin/rooms/list">
+            <svg class="glyph stroked calendar">
+                <use xlink:href="#stroked-calendar"></use>
+            </svg>
+            诊室管理</a></li>
+        <li><a href="/admin/doctors/list">
+            <svg class="glyph stroked calendar">
+                <use xlink:href="#stroked-calendar"></use>
+            </svg>
+            医生管理</a></li>
+        <li><a href="/admin/scheduling/list">
+            <svg class="glyph stroked calendar">
+                <use xlink:href="#stroked-calendar"></use>
+            </svg>
+            排班配置</a></li>
+        <li><a href="/admin/system">
+            <svg class="glyph stroked calendar">
+                <use xlink:href="#stroked-calendar"></use>
+            </svg>
+            系统配置</a></li>
+        <li><a href="/admin/week">
+            <svg class="glyph stroked calendar">
+                <use xlink:href="#stroked-calendar"></use>
+            </svg>
+            医生排班设置</a></li>
+    </ul>
+</div>
+<div style="width:80%;margin-left:15%;" class="main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#">
+                <svg class="glyph stroked home">
+                    <use xlink:href="#stroked-home"></use>
+                </svg>
+            </a></li>
+            <li class="active">
+                首页
+            </li>
+        </ol>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-lg-3">
+            <div class="panel panel-blue panel-widget">
+                <div class="row no-padding"><a href="/admin/rooms/add">
+                    <div class="col-sm-3 col-lg-5 widget-left">
+                        <svg class="glyph stroked plus-sign">
+                            <use xlink:href="#stroked-plus-sign"></use>
+                        </svg>
+                    </div>
+                </a>
+                    <div class="col-sm-9 col-lg-7 widget-right">添加诊室</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-3">
+            <div class="panel panel-blue panel-widget">
+                <div class="row no-padding"><a href="/admin/clinics/add">
+                    <div class="col-sm-3 col-lg-5 widget-left">
+                        <svg class="glyph stroked plus-sign">
+                            <use xlink:href="#stroked-plus-sign"></use>
+                        </svg>
+                    </div>
+                </a>
+                    <div class="col-sm-9 col-lg-7 widget-right">添加分诊台</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-3">
+            <div class="panel panel-blue panel-widget">
+                <div class="row no-padding"><a href="/admin/index/queueAdd">
+                    <div class="col-sm-3 col-lg-5 widget-left">
+                        <svg class="glyph stroked plus-sign">
+                            <use xlink:href="#stroked-plus-sign"></use>
+                        </svg>
+                    </div>
+                </a>
+                    <div class="col-sm-9 col-lg-7 widget-right">添加排队</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12"></div>
+            <div class="panel panel-default">
+                <div class="panel-heading"><a href="?ty=room"
+                                              style="border:solid 1px silver;border-right:none;text-align:center;background:#30A5FF;color:#ffffff;text-decoration:none;"
+                                              class="col-xs-2">门诊排队列表</a><a href="?ty=check"
+                                                                            style="border:solid 1px silver;text-align:center;text-decoration:none;"
+                                                                            class="col-xs-2">检查排队列表</a></div>
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th> 排队号</th>
+                            <th> 姓名</th>
+                            <th> 性别</th>
+                            <th> 年龄</th>
+                            <th> 医生</th>
+                            <th> 诊室</th>
+                            <th> 科室</th><!--if hospitalName == '贵阳市第二人民医院'-->
+                            <th> 挂号时间</th><!--else//th  预约时间-->
+                            <th> 状态</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td colspan="9">暂无数据</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <center>
+                        <nav>
+                            <ul class="pagination"><span style="position:relative;top:8px;left:10px"
+                                                         class="rows">第1/0页</span></ul>
+                        </nav>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/javascripts/jquery-1.11.1.min.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+<script src="/javascripts/bootstrap-datepicker.js"></script>
+<script src="/javascripts/bootstrap-datepicker.zh-CN.js"></script>
+<script src="/javascripts/jstree.min.js"></script>
+<script src="/javascripts/jquery.form.js"></script>
+<script src="/javascripts/select2.min.js"></script>
+<script src="/javascripts/jq.validate.js"></script>
+<script src="/javascripts/alertify.min.js"></script>
+<script src="/javascripts/md5.js"></script>
+<script src="/javascripts/app.js"></script>
+</body>
+</html>
