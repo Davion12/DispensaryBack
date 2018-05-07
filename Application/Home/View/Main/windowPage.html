@@ -1,0 +1,39 @@
+<div class="page">
+    <p style="font-size: 15px;">窗口列表</p>
+    <button class="button_style" onclick="displayFrame(2)">添加</button>
+    <div class="table_boder">
+        <table id="dispensary_table" border="0" class="table_style">
+            <tr>
+                <th>ID</th>
+                <th>窗口名称</th>
+                <th>窗口绑定药房ID</th>
+                <th>窗口操作</th>
+            </tr>
+        </table>
+    </div>
+    <div class="theme-popover">
+        <div class="theme-poptit">
+            <h3>修改窗口信息</h3>
+            <a href="javascript:;" title="关闭" class="close" style=" position:relative;  left:200px; top:-40px;">关闭</a>
+        </div>
+        <div class="theme-popbod dform">
+            <form class="dispensary_form_style" name="window_form" method="post">
+                <table>
+                    <tr>
+                        <td>窗口ID</td>
+                        <td ><textarea  id="dispensary_id" name="dispensary_id" ></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>窗口名称</td>
+                        <td><textarea  id="dispensary_name" name="dispensary_name" ></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>窗口绑定药房ID</td>
+                        <td><textarea  id="rule" name="rule" ></textarea></td>
+                    </tr>
+                </table>
+                <input class="btn btn-primary" type="submit" onclick="submitModify()" name="submit" value=" 确认 ">
+            </form>
+        </div>
+    </div>
+</div>

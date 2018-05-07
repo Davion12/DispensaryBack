@@ -1,0 +1,65 @@
+.page {
+    position: relative;
+    background-color: #ffffff;
+    left: 295px;
+    top: -510px;
+    height: 500px;
+}
+
+button.button_style {
+    position: relative;
+    left: 900px;
+    height: 30px;
+    width: 50px;
+    background-color: lightskyblue;
+}
+
+
+table.table_style {
+    position: relative;
+    width: 1000px;
+    top: 30px;
+    text-align: center;
+}
+
+th {
+    font-weight: normal;
+}
+
+.table_boder {
+    height: 900px;
+    border: solid 1px lightslategrey;
+    position: relative;
+    top: 30px;
+    width: 980px;
+}
+
+
+.theme-popover {
+    z-index: 9999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 660px;
+    height: 360px;
+    margin: -180px 0 0 -330px;
+    border-radius: 5px;
+    border: solid 2px #666;
+    background-color: #fff;
+    display: none;
+    box-shadow: 0 0 10px #666;
+}
+
+
+.theme-poptit {
+    border-bottom: 1px solid #ddd;
+    padding: 12px;
+    position: relative;
+    text-align: center;
+}
+
+form.dispensary_form_style {
+    position: relative;
+    left: 150px;
+    top: 40px;
+}

@@ -1,0 +1,38 @@
+.nego_style {
+    background-color: #ffffff;
+    width: 300px;
+    position: relative;
+    top: -16px;
+    left: -5px;
+    height: 500px;
+}
+
+li.item {
+    position: relative;
+    font-size: 15px;
+    color: lightskyblue;
+    left: 40px;
+    list-style: none;
+}
+
+.nego_position {
+    position: relative;
+    top: 40px;
+    left: -15px;
+}
+
+.active{
+    background-image: url(/Public/img/selected.jpg);
+    background-repeat: no-repeat;
+    height: 30px;
+    position: relative;
+    top: 15px;
+}
+
+.noactive {
+    background-image: url(/Public/img/noSelected.jpg);
+    background-repeat: no-repeat;
+    height: 30px;
+    position: relative;
+    top: 20px;
+}

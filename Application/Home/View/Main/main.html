@@ -2,13 +2,18 @@
         "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>药房管理后台主界面</title>
+    <title>朗玛药房管理后台</title>
     <meta charset="utf-8">
-    <link href="__PUBLIC__/css/Main/main.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="__PUBLC__/css/Main/main.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/Main/page.css">
 </head>
 <body>
-    <div class="up_background">
-        <p>朗玛药房管理系统</p>
-    </div>
+<include file="Main:header"/>
+<include file="Main:negotia"/>
+<div id="changePage">
+    <include file="Main:mainPage"/>
+</div>
 </body>
+<script type="text/javascript" src="__PUBLIC__/Common/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/Main/main.js"></script>
 </html>

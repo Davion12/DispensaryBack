@@ -35,3 +35,15 @@ function showErrorMsg(id, msg) {
     $('#error_msg').html(msg);
     $(id).focus();
 }
+
+
+$(function () {
+    //输入框焦点事件时，错误提示清除
+    $('#login_name').focus(function () {
+        $('#error_msg').html("");
+    });
+    //输入框焦点事件时，错误提示清除
+    $('#password').focus(function () {
+        $('#error_msg').html("");
+    });
+});

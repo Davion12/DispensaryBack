@@ -39,7 +39,26 @@ class IndexController extends Controller
     }
 
     public function loadMainPage(){
-            echo "进入主界面";
+        $this->display("Main/main");
+    }
+
+    public function changeMainPage(){
+        $this->display("Main/mainPage");
+    }
+
+    public function changeDispensaryPage(){
+        $this->display("Main/dispensaryPage");
+    }
+
+    public function changeWindowPage(){
+        $this->display("Main/windowPage");
+    }
+    public function changeAccountPage(){
+        $this->display("Main/accountPage");
+    }
+
+    public function modifyDispensaryInfo(){
+        $this->display("Main/modifyDispensary");
     }
 
 }
