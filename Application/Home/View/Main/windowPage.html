@@ -14,7 +14,7 @@
     <div class="theme-popover">
         <div class="theme-poptit">
             <h3>修改窗口信息</h3>
-            <a href="javascript:;" title="关闭" class="close" style=" position:relative;  left:200px; top:-40px;">关闭</a>
+            <button onclick="hideFrame(2)" class="close_style">关闭</button>
         </div>
         <div class="theme-popbod dform">
             <form class="dispensary_form_style" name="window_form" method="post">
@@ -32,7 +32,7 @@
                         <td><textarea  id="rule" name="rule" ></textarea></td>
                     </tr>
                 </table>
-                <input class="btn btn-primary" type="submit" onclick="submitModify()" name="submit" value=" 确认 ">
+                <button class="btn btn-primary" onclick="submitModify()">确认</button>
             </form>
         </div>
     </div>

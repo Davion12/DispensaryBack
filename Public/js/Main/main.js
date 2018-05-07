@@ -92,40 +92,44 @@ function modify() {
         displayFrame(1);
     });
 
-    $('.theme-poptit .close').click(function(){
+    $('#close').click(function(){
         hideFrame();
     })
 }
 
-function displayFrame(type) {
+function displayFrame(type, id) {
     $('.theme-popover-mask').fadeIn(100);
     $('.theme-popover').slideDown(200);
     if(type === 1){
-        if(name === "dispensary"){
-            $('#dispensary_id').html(dispensaryInfo[0]["roomId"]);
-            $('#dispensary_name').html(dispensaryInfo[0]["roomName"]);
-            $('#rule').html(dispensaryInfo[0]["rule"]);
-        }
-        if(name === "window"){
-            $('#dispensary_id').html(windowInfo[0]["windowId"]);
-            $('#dispensary_name').html(windowInfo[0]["windowName"]);
-            $('#rule').html(windowInfo[0]["roomId"]);
-        }
+            $('#dispensary_id').html(dispensaryInfo[id]["roomId"]);
+            $('#dispensary_name').html(dispensaryInfo[id]["roomName"]);
+            $('#rule').html(dispensaryInfo[id]["rule"]);
+
+    } else if(type === 2){
+        $('#dispensary_id').html(windowInfo[id]["windowId"]);
+        $('#dispensary_name').html(windowInfo[id]["windowName"]);
+        $('#rule').html(windowInfo[id]["roomId"]);
+    } else {
+        $('#dispensary_id').html(accountInfo[id]["accountId"]);
+        $('#dispensary_name').html(accountInfo[id]["accountName"]);
+        $('#rule').html(accountInfo[id]["displayName"]);
+        $('#pwd').html(accountInfo[id]["password"]);
     }
 }
 
-function hideFrame(name) {
+function hideFrame(type) {
     $('.theme-popover-mask').fadeOut(100);
     $('.theme-popover').slideUp(200);
-    if(name === "dispensary"){
+    if((type === 1) || (type === 2)){
+        $('#dispensary_id').html(dispensaryInfo[0]["roomId"]);
+        $('#dispensary_name').html(dispensaryInfo[0]["roomName"]);
+        $('#rule').html(dispensaryInfo[0]["rule"]);
+
+    } else {
         $('#dispensary_id').html("");
         $('#dispensary_name').html("");
         $('#rule').html("");
-    }
-    if(name === "window"){
-        $('#window_id').html("");
-        $('#window_name').html("");
-        $('#bind_dispensary_id').html("");
+        $('#pwd').html("");
     }
 }
 
@@ -144,7 +148,7 @@ function displayDispensaryInfo() {
                     trHtml += "<td>" + dispensaryInfo[i]["roomId"] + "</td>";
                     trHtml += "<td>" + dispensaryInfo[i]["roomName"] + "</td>";
                     trHtml += "<td>" + dispensaryInfo[i]["rule"] + "</td>";
-                    trHtml += "<td> <a href='javascript:' onclick='displayFrame(1)' id='modify'>修改</a>  |  <a href=''>删除</a></td>";
+                    trHtml += "<td> <a href='javascript:' onclick='displayFrame(1, "+dispensaryInfo[i]['roomId']+")' id='modify'>修改</a>  |  <a href=''>删除</a></td>";
                     $("#dispensary_table").append(trHtml);
                 }
             } else {
@@ -168,7 +172,7 @@ function displayWindowInfo() {
                     trHtml += "<td>" + windowInfo[i]["windowId"] + "</td>";
                     trHtml += "<td>" + windowInfo[i]["windowName"] + "</td>";
                     trHtml += "<td>" + windowInfo[i]["roomId"] + "</td>";
-                    trHtml += "<td> <a href='javascript:' onclick='modify(1)' id='modify'>修改</a>  |  <a href=''>删除</a></td>";
+                    trHtml += "<td> <a href='javascript:' onclick='displayFrame(2, "+windowInfo[i]['windowId']+")' id='modify'>修改</a>  |  <a href=''>删除</a></td>";
                     $("#dispensary_table").append(trHtml);
                 }
             } else {
@@ -192,7 +196,7 @@ function displayAccountInfo() {
                     trHtml += "<td>" + accountInfo[i]["accountName"] + "</td>";
                     trHtml += "<td>" + accountInfo[i]["displayName"] + "</td>";
                     trHtml += "<td>" + accountInfo[i]["password"] + "</td>";
-                    trHtml += "<td> <a href='javascript:' onclick='displayFrame(1)' id='modify'>修改</a>  |  <a href=''>删除</a></td>";
+                    trHtml += "<td> <a href='javascript:' onclick='displayFrame(3, "+(accountInfo[i]['accountId'] -1)+")' id='modify'>修改</a>  |  <a href=''>删除</a></td>";
                     $("#dispensary_table").append(trHtml);
                 }
             } else {

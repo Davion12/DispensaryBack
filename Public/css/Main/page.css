@@ -63,3 +63,18 @@ form.dispensary_form_style {
     left: 150px;
     top: 40px;
 }
+
+.close_style {
+    position: relative;
+    background-color: crimson;
+    left: 250px;
+    top: -50px;
+}
+
+.btn {
+    width: 100px;
+    position: relative;
+    top: 20px;
+    left: 80px;
+    background-color: darkseagreen;
+}
