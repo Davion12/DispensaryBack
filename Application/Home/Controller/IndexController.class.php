@@ -58,7 +58,7 @@ class IndexController extends Controller
     }
 
     public function modifyDispensaryInfo(){
-        $this->display("Main/modifyDispensary");
+        $this->display("");
     }
 
 }
